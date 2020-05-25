@@ -23,6 +23,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import static fr.cooktail.util.Menu.cooktailOnOptionsItemSelected;
+
 public class MainActivity extends AppCompatActivity {
 
     private String TAG = "MainActivity";
@@ -91,22 +93,8 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        boolean ret ;
-
-        switch (item.getItemId()) {
-            case R.id.It_FARandom:
-                Intent newIntent = new Intent(MainActivity.this, DetailsCocktail.class);
-                newIntent.putExtra("idCocktail", 11423); // FIXME: for now, the DetailCocktail view should fetch the Godftather cocktail, if so, change it to random int
-                startActivity(newIntent);
-                ret = true;
-                break;
-            default:
-                ret = super.onOptionsItemSelected(item);
-                break;
-        }
-        return ret;
+        return cooktailOnOptionsItemSelected(item , this) ;
     }
 }
