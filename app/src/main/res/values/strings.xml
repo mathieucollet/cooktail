@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cooktail</string>
+    <string name="categoriesTitle">Catégories</string>
 </resources>
