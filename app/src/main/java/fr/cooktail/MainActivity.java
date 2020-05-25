@@ -1,7 +1,9 @@
 package fr.cooktail;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -17,6 +19,9 @@ import java.util.ArrayList;
 
 import fr.cooktail.interfaces.IResult;
 import fr.cooktail.services.Requests;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -78,5 +83,30 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "Volley JSON post" + "That didn't work!");
             }
         };
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        boolean ret ;
+
+        switch (item.getItemId()) {
+            case R.id.It_FARandom:
+                Intent newIntent = new Intent(MainActivity.this, DetailsCocktail.class);
+                newIntent.putExtra("idCocktail", 11423); // FIXME: for now, the DetailCocktail view should fetch the Godftather cocktail, if so, change it to random int
+                startActivity(newIntent);
+                ret = true;
+                break;
+            default:
+                ret = super.onOptionsItemSelected(item);
+                break;
+        }
+        return ret;
     }
 }
