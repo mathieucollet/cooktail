@@ -1,10 +1,15 @@
 package fr.cooktail;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import static fr.cooktail.util.Menu.cooktailOnOptionsItemSelected;
 
 public class DetailsCocktail extends AppCompatActivity  {
     int theIdCocktail ;
@@ -47,8 +52,11 @@ public class DetailsCocktail extends AppCompatActivity  {
     //TODO: fetch the cocktail details with a fonction from J
         //TODO: fill up the textViewS details
 
-
     }
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,5 +64,8 @@ public class DetailsCocktail extends AppCompatActivity  {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return cooktailOnOptionsItemSelected(item , this) ;
+    }
 }
