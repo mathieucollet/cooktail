@@ -49,7 +49,7 @@ public class DetailsCocktail extends AppCompatActivity  {
 
         this.TV_contentName.setText(String.valueOf( this.theIdCocktail) );
 
-    //TODO: fetch the cocktail details with a fonction from J
+        //TODO: fetch the cocktail details with a fonction from J
         //TODO: fill up the textViewS details
 
     }

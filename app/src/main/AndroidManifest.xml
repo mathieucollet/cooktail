@@ -28,6 +28,9 @@
         <activity android:name=".ByIngredientSearch"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".ByIngredientResult"
+            android:parentActivityName=".ByIngredientSearch">
+        </activity>
 
     </application>
 

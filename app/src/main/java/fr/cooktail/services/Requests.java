@@ -80,4 +80,31 @@ public class Requests {
         return jsonObj;
     }
 
+    public Object getCocktailsByIngredient(String ingName) {
+        final String baseURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="+ingName;
+
+        RequestQueue queue = Volley.newRequestQueue(mContext);
+
+        JsonObjectRequest jsonObj = new JsonObjectRequest(
+                Request.Method.GET,
+                baseURL,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        if(mResultCallback != null)
+                            mResultCallback.notifySuccess("GET", response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if (mResultCallback != null)
+                    mResultCallback.notifyError("GET", error);
+            }
+        });
+
+        queue.add(jsonObj);
+        return jsonObj;
+    }
+
 }

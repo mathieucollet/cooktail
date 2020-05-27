@@ -1,0 +1,38 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+     android:layout_height="50dp"
+    android:layout_width="match_parent"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="8dp"
+    android:background="@color/colorAccent"
+    >
+
+
+    <TextView
+        android:id="@+id/TV_nameDrink"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:text="aDrink"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintEnd_toStartOf="@+id/IV_drinkThumb"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/IV_drinkThumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+        card_view:srcCompat="@android:drawable/ic_menu_report_image" />
+</androidx.constraintlayout.widget.ConstraintLayout>

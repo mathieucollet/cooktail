@@ -1,14 +1,21 @@
 package fr.cooktail.adapters;
 
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import fr.cooktail.ByIngredientResult;
+import fr.cooktail.DetailsCocktail;
 import fr.cooktail.R;
 
 import java.util.Collections;
@@ -17,8 +24,8 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
     private ArrayList<String> ingredientsList ;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView TV_itemIngredient;
-        public MyViewHolder(TextView v) {
+        public Button TV_itemIngredient;
+        public MyViewHolder(Button v) {
             super(v);
             TV_itemIngredient = v;
         }
@@ -34,10 +41,23 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
 
     @NonNull
     @Override
-    public IngredientsAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        TextView v = (TextView) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.ingredient_layout, parent, false);
-        MyViewHolder vh = new MyViewHolder(v);
+    public IngredientsAdapter.MyViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
+        final Button aButt = (Button) LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.ingredient_button_layout, parent, false);
+
+        aButt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newIntent = new Intent(parent.getContext(), ByIngredientResult.class);
+                newIntent.putExtra("theIngredient", aButt.getText().toString());
+
+                Log.d("persoLOG", "IngredientAdapter : "+newIntent.getExtras().toString()) ;
+
+                parent.getContext().startActivity( newIntent  );
+            }
+        });
+
+        MyViewHolder vh = new MyViewHolder(aButt);
         return vh;
     }
 
