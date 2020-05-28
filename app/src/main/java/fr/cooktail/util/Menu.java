@@ -28,7 +28,7 @@ public abstract class Menu {
         switch (item.getItemId()) {
             case R.id.It_FARandom:
                 newIntent = new Intent(currentPackageContext, DetailsCocktail.class);
-                newIntent.putExtra("idCocktail", 11423); // FIXME: for now, the DetailCocktail view should fetch the Godftather cocktail, if so, change it to random int
+                newIntent.putExtra("isRandom", true);
                 currentPackageContext.startActivity(newIntent);
                 ret = true;
                 break;

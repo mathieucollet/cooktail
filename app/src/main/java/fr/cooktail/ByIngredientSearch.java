@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,6 +36,8 @@ public class ByIngredientSearch extends AppCompatActivity {
     IResult mResultCallback = null;
     Requests requests;
 
+    SearchView ET_typeIngredient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +55,23 @@ public class ByIngredientSearch extends AppCompatActivity {
         requests.getIngredients();
 
 
+    this.ET_typeIngredient = findViewById(R.id.ET_typeIngredient);
+    this.ET_typeIngredient.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        @Override
+        public boolean onQueryTextSubmit(String query) {
+            mAdapter.sort_byName(query);
+            return false;
+        }
 
+        @Override
+        public boolean onQueryTextChange(String newText) {
+            mAdapter.sort_byName(newText);
+            synchronized (mAdapter) {
+            mAdapter.notifyDataSetChanged();
+            }
+            return false;
+        }
+    });
     }
 
 
@@ -70,6 +90,7 @@ public class ByIngredientSearch extends AppCompatActivity {
 
 
     void initVolleyCallback(){
+        Log.d("persoLOG", "_ByIngredientSearch_ : "+ " (start volley) "+ recyclerView.getAdapter().getItemCount() );
         mResultCallback = new IResult() {
             @Override
             public void notifySuccess(String requestType, JSONObject response) {

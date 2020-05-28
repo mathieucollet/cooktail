@@ -35,6 +35,7 @@ import static fr.cooktail.util.Menu.cooktailOnOptionsItemSelected;
 
 public class DetailsCocktail extends AppCompatActivity  {
     int theIdCocktail ;
+    boolean isRandom ;
     DrinkDetailed theDrink ;
 
     private IResult mResultCallback = null;
@@ -79,19 +80,28 @@ public class DetailsCocktail extends AppCompatActivity  {
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
-            if(extras == null)
+            if(extras == null) {
                 this.theIdCocktail = 0 ; // { "drinks":null }
-            else
+                this.isRandom = false ;
+            }
+            else {
                 this.theIdCocktail = extras.getInt("idCocktail");
+                this.isRandom = extras.getBoolean("isRandom");
+            }
 
         } else {
             this.theIdCocktail = (int) savedInstanceState.getSerializable("idCocktail");
+            this.isRandom = (boolean) savedInstanceState.getSerializable("isRandom");
         }
 
 
         initVolleyCallback();
         requests = new Requests(mResultCallback,this);
         requests.getDrinkById(this.theIdCocktail);
+        if (this.isRandom)
+            requests.getDrinkByRandom();
+         else
+            requests.getDrinkById(this.theIdCocktail);
 
     }
 
