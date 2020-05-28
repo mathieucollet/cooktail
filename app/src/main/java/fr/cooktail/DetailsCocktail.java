@@ -12,6 +12,7 @@ import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +46,7 @@ public class DetailsCocktail extends AppCompatActivity  {
     TextView TV_contentAlchoholic ;
     TextView TV_contentGlassType ;
     TextView TV_contentTags ;
+    Button BTN_like;
 
     ListView LV_ingredientsList ;
     ArrayAdapter<String> theArrayAdapterIngredients;
@@ -62,6 +64,7 @@ public class DetailsCocktail extends AppCompatActivity  {
         this.TV_contentAlchoholic = findViewById(R.id.TV_contentAlchoholic);
         this.TV_contentGlassType = findViewById(R.id.TV_contentGlassType);
         this.TV_contentTags = findViewById(R.id.TV_contentTags);
+        this.BTN_like = findViewById(R.id.BTN_like);
 
 
         this.theDrink = new DrinkDetailed();
@@ -89,6 +92,16 @@ public class DetailsCocktail extends AppCompatActivity  {
         }
 
 
+    //TODO: fetch the cocktail details with a fonction from J
+        //TODO: fill up the textViewS details
+
+        BTN_like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseHelper db = new DatabaseHelper(DetailsCocktail.this);
+//                db.addDrink();
+            }
+        });
         initVolleyCallback();
         requests = new Requests(mResultCallback,this);
         requests.getDrinkById(this.theIdCocktail);
