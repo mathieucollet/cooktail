@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -46,11 +47,32 @@ class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_API_ID, api_id);
         cv.put(COLUMN_NAME, name);
 
-        long result = db.insert(TABLE_NAME, null, cv);
-        if (result == -1) {
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(context, "Liked successfully", Toast.LENGTH_SHORT).show();
+        if(isAlreadyLiked(api_id)) {
+            Toast.makeText(context, "Already in your favs bro 👉", Toast.LENGTH_SHORT).show();
+        }
+         else {
+            long result = db.insert(TABLE_NAME, null, cv);
+            if (result == -1) {
+                Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "Liked successfully", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    boolean isAlreadyLiked(int api_id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM "+ TABLE_NAME +" WHERE "+COLUMN_API_ID+"="+api_id ;
+
+        int nbRow = db.rawQuery(query, null).getCount() ;
+
+        if (nbRow == 1)
+            return true;
+        else if (nbRow == 0)
+            return false;
+        else {
+            Log.e("error", "well, something is wrong, maybe the Drink has been already liked by a curious way...");
+            return true;
         }
     }
 
