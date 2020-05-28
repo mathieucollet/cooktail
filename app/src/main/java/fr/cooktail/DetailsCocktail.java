@@ -45,6 +45,7 @@ public class DetailsCocktail extends AppCompatActivity  {
     TextView TV_contentAlchoholic ;
     TextView TV_contentGlassType ;
     TextView TV_contentTags ;
+    TextView TV_contentInstructions ;
 
     ListView LV_ingredientsList ;
     ArrayAdapter<String> theArrayAdapterIngredients;
@@ -62,6 +63,7 @@ public class DetailsCocktail extends AppCompatActivity  {
         this.TV_contentAlchoholic = findViewById(R.id.TV_contentAlchoholic);
         this.TV_contentGlassType = findViewById(R.id.TV_contentGlassType);
         this.TV_contentTags = findViewById(R.id.TV_contentTags);
+        this.TV_contentInstructions = findViewById(R.id.TV_contentInstructions);
 
 
         this.theDrink = new DrinkDetailed();
@@ -133,6 +135,7 @@ public class DetailsCocktail extends AppCompatActivity  {
                     TV_contentAlchoholic.setText(theDrink.strAlcoholic);
                     TV_contentGlassType.setText(theDrink.strGlass);
                     TV_contentTags.setText(theDrink.strTags);
+                    TV_contentInstructions.setText(theDrink.strInstructions);
 
 
                     synchronized(theArrayAdapterIngredients){
