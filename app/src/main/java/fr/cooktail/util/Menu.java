@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 
 import fr.cooktail.About;
 import fr.cooktail.ByNameSearch;
+import fr.cooktail.ByIngredientSearch;
 import fr.cooktail.DetailsCocktail;
 import fr.cooktail.R;
 
@@ -38,6 +39,8 @@ public abstract class Menu {
                 break;
             case R.id.It_SBName:
                 newIntent = new Intent(currentPackageContext, ByNameSearch.class);
+            case R.id.It_SBIngredient:
+                newIntent = new Intent(currentPackageContext, ByIngredientSearch.class);
                 currentPackageContext.startActivity(newIntent);
                 ret = true;
                 break;

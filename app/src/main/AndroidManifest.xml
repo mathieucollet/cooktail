@@ -11,6 +11,7 @@
         android:roundIcon="@drawable/ic_cooktail_icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +27,12 @@
         </activity>
         <activity android:name=".ByNameSearch"
             android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".ByIngredientSearch"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".ByIngredientResult"
+            android:parentActivityName=".ByIngredientSearch">
         </activity>
     </application>
 
