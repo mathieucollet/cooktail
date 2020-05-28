@@ -22,6 +22,9 @@
         <activity android:name=".DetailsCocktail"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".Favorites"
+            android:parentActivityName=".MainActivity">
+        </activity>
         <activity android:name=".About"
             android:parentActivityName=".MainActivity">
         </activity>

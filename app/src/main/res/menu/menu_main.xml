@@ -18,6 +18,11 @@
         android:title="Find a random"
         />
     <item
+        android:id="@+id/It_FAFavorites"
+        android:orderInCategory="100"
+        android:title="Favorites"
+        />
+    <item
         android:id="@+id/It_About"
         android:orderInCategory="100"
         android:title="About"

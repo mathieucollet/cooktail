@@ -10,6 +10,7 @@ import fr.cooktail.About;
 import fr.cooktail.ByNameSearch;
 import fr.cooktail.ByIngredientSearch;
 import fr.cooktail.DetailsCocktail;
+import fr.cooktail.Favorites;
 import fr.cooktail.R;
 
 
@@ -29,6 +30,11 @@ public abstract class Menu {
             case R.id.It_FARandom:
                 newIntent = new Intent(currentPackageContext, DetailsCocktail.class);
                 newIntent.putExtra("isRandom", true);
+                currentPackageContext.startActivity(newIntent);
+                ret = true;
+                break;
+            case R.id.It_FAFavorites:
+                newIntent = new Intent(currentPackageContext, Favorites.class);
                 currentPackageContext.startActivity(newIntent);
                 ret = true;
                 break;

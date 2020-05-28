@@ -105,9 +105,10 @@ public class DetailsCocktail extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
                 DatabaseHelper db = new DatabaseHelper(DetailsCocktail.this);
-//                db.addDrink();
+                db.addDrink(theDrink.idDrink, theDrink.strDrink);
             }
         });
+
         initVolleyCallback();
         requests = new Requests(mResultCallback,this);
         requests.getDrinkById(this.theIdCocktail);
