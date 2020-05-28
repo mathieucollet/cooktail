@@ -65,9 +65,9 @@ public class ByNameSearch extends AppCompatActivity {
                 cocktailList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        //Intent intent = new Intent(ByNameSearch.this,ByNameResult.class);
-                        //intent.putExtra("COCKTAIL_ID", cocktail_id);
-                        //startActivity(intent);
+                        Intent intent = new Intent(ByNameSearch.this,DetailsCocktail.class);
+                        intent.putExtra("idCocktail", Integer.parseInt(cocktail_id));
+                        startActivity(intent);
                     }
                 });
 
