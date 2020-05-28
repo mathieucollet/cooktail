@@ -3,9 +3,9 @@ package fr.cooktail.models;
 import java.util.ArrayList;
 
 public class DrinkDetailed {
-    int idDrink ;  // idDrink: "13940",
+    public int idDrink ;  // idDrink: "13940",
 
-    String strDrink ; // strDrink: "69 Special",
+    public String strDrink ; // strDrink: "69 Special",
 
     // strDrinkAlternate: null,
 
@@ -19,19 +19,19 @@ public class DrinkDetailed {
 
     // strDrinkZH-HANT: null,
 
-    // strTags: null,
+    public String strTags ; // strTags: null,
 
     // strVideo: null,
 
-    String strCategory ; // strCategory: "Ordinary Drink",
+    public String strCategory ; // strCategory: "Ordinary Drink",
 
     // strIBA: null,
 
-    String strAlcoholic ; //
+    public String strAlcoholic ; //
 
-    String strGlass ; // strGlass: "Collins Glass",
+    public String strGlass ; // strGlass: "Collins Glass",
 
-    String strInstructions ; // strInstructions: "Pour 2 oz. gin. Add 4 oz. 7-up. Add Lemon Juice for flavor. If you are weak, top up glass with more 7-Up.",
+    public String strInstructions ; // strInstructions: "Pour 2 oz. gin. Add 4 oz. 7-up. Add Lemon Juice for flavor. If you are weak, top up glass with more 7-Up.",
 
     // strInstructionsES: null,
 
@@ -43,9 +43,9 @@ public class DrinkDetailed {
 
     // strInstructionsZH-HANT: null,
 
-    String strDrinkThumb ; // strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/vqyxqx1472669095.jpg",
+    public String strDrinkThumb ; // strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/vqyxqx1472669095.jpg",
 
-    ArrayList<String> ingredients ;
+    public ArrayList<String> ingredients ;
     // strIngredient1: "Gin",
     // strIngredient2: "7-Up",
     // strIngredient3: "Lemon juice",
@@ -62,7 +62,7 @@ public class DrinkDetailed {
     // strIngredient14: null,
     // strIngredient15: null,
 
-    ArrayList<String> measures ;
+    public ArrayList<String> measures ;
     // strMeasure1: "2 oz dry ",
     // strMeasure2: "4 oz ",
     // strMeasure3: "0.75 oz ",
@@ -81,4 +81,76 @@ public class DrinkDetailed {
 
     // strCreativeCommonsConfirmed: "No",
     // dateModified: "2016-08-31 19:44:55"
+
+
+    public DrinkDetailed(int idDrink, String strDrink, String strTags, String strCategory, String strAlcoholic, String strGlass, String strInstructions, String strDrinkThumb, ArrayList<String> ingredients, ArrayList<String> measures) {
+        this.idDrink = idDrink;
+        this.strDrink = strDrink;
+        this.strTags = strTags;
+        this.strCategory = strCategory;
+        this.strAlcoholic = strAlcoholic;
+        this.strGlass = strGlass;
+        this.strInstructions = strInstructions;
+        this.strDrinkThumb = strDrinkThumb;
+        this.ingredients = ingredients;
+        this.measures = measures;
+    }
+
+    public DrinkDetailed() {}
+
+    public void setIdDrink(int idDrink) {
+        this.idDrink = idDrink;
+    }
+
+    public void setStrDrink(String strDrink) {
+        this.strDrink = strDrink;
+    }
+
+    public void setStrTags(String strTags) {
+        this.strTags = strTags;
+    }
+
+    public void setStrCategory(String strCategory) {
+        this.strCategory = strCategory;
+    }
+
+    public void setStrAlcoholic(String strAlcoholic) {
+        this.strAlcoholic = strAlcoholic;
+    }
+
+    public void setStrGlass(String strGlass) {
+        this.strGlass = strGlass;
+    }
+
+    public void setStrInstructions(String strInstructions) {
+        this.strInstructions = strInstructions;
+    }
+
+    public void setStrDrinkThumb(String strDrinkThumb) {
+        this.strDrinkThumb = strDrinkThumb;
+    }
+
+    public void setIngredients(ArrayList<String> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public void setMeasures(ArrayList<String> measures) {
+        this.measures = measures;
+    }
+
+    @Override
+    public String toString() {
+        return "DrinkDetailed{" +
+                "  idDrink=" + idDrink +
+                ",   strDrink='" + strDrink + '\'' +
+                ",   strTags='" + strTags + '\'' +
+                ",   strCategory='" + strCategory + '\'' +
+                ",   strAlcoholic='" + strAlcoholic + '\'' +
+                ",   strGlass='" + strGlass + '\'' +
+                ",   strInstructions='" + strInstructions + '\'' +
+                ",   strDrinkThumb='" + strDrinkThumb + '\'' +
+                ",   ingredients=" + ingredients +
+                ",   measures=" + measures +
+                '}';
+    }
 }

@@ -51,7 +51,7 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
                 Intent newIntent = new Intent(parent.getContext(), ByIngredientResult.class);
                 newIntent.putExtra("theIngredient", aButt.getText().toString());
 
-                Log.d("persoLOG", "IngredientAdapter : "+newIntent.getExtras().toString()) ;
+                Log.d("persoLOG", "_IngredientAdapter_ : "+newIntent.getExtras().toString()) ;
 
                 parent.getContext().startActivity( newIntent  );
             }

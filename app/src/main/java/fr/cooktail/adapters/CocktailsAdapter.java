@@ -65,7 +65,7 @@ public class CocktailsAdapter extends RecyclerView.Adapter<CocktailsAdapter.MyVi
                 Intent newIntent = new Intent(parent.getContext(), DetailsCocktail.class);
                 newIntent.putExtra("idCocktail", theDrinkList.get(position).idDrink);
 
-                Log.d("persoLOG", "CocktailAdapter-setOnClickListener : "+ newIntent.getExtras() ) ;
+                Log.d("persoLOG", "_CocktailAdapter-setOnClickListener_ : "+ newIntent.getExtras() ) ;
 
                 parent.getContext().startActivity( newIntent  );
             }

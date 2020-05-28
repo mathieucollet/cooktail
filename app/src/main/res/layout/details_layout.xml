@@ -92,37 +92,65 @@
         app:layout_constraintStart_toStartOf="@+id/TV_labelTages"
         app:layout_constraintTop_toBottomOf="@+id/TV_labelTages" />
 
-    <TextView
-        android:id="@+id/TV_labelInstructions"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_contentTags">
+
+        <TextView
+            android:id="@+id/TV_ingredientsListLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Ingredients"
+            tools:listitem="@android:layout/activity_list_item" />
+
+        <TextView
+            android:id="@+id/TV_measuresListLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Measures"
+            tools:listitem="@android:layout/activity_list_item" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Instructions: "
-        app:layout_constraintStart_toStartOf="@+id/TV_contentTags"
-        app:layout_constraintTop_toBottomOf="@+id/TV_contentTags" />
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-    <TextView
-        android:id="@+id/TV_contentInstructions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="[Instrucitons]"
-        app:layout_constraintStart_toStartOf="@+id/TV_labelInstructions"
-        app:layout_constraintTop_toBottomOf="@+id/TV_labelInstructions" />
+        <ListView
+            android:id="@+id/LV_ingredientsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:listitem="@android:layout/activity_list_item" />
 
-    <TextView
-        android:id="@+id/TV_labelIngredients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Ingredients: "
-        app:layout_constraintStart_toStartOf="@+id/TV_contentInstructions"
-        app:layout_constraintTop_toBottomOf="@+id/TV_contentInstructions" />
+        <ListView
+            android:id="@+id/LV_measuresList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:listitem="@android:layout/activity_list_item" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/TV_contentIngredients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="[Ingredients]"
-        app:layout_constraintStart_toStartOf="@+id/TV_labelIngredients"
-        app:layout_constraintTop_toBottomOf="@+id/TV_labelIngredients" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

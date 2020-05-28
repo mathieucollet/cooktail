@@ -104,7 +104,7 @@ public class ByIngredientResult extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                Log.d("persoLOG", "ByIngredientResult : " + retList.toString() );
+                Log.d("persoLOG", "_ByIngredientResult_ : " + retList.toString() );
 
 //                mAdapter.a
             }
