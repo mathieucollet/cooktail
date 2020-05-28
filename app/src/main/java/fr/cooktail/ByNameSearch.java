@@ -39,6 +39,7 @@ public class ByNameSearch extends AppCompatActivity {
 
     ArrayAdapter adapter;
     ListView cocktailList;
+    ArrayList<Integer> idsCocktails ;
 
     String cocktail_id;
 
@@ -66,7 +67,7 @@ public class ByNameSearch extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(ByNameSearch.this,DetailsCocktail.class);
-                        intent.putExtra("idCocktail", Integer.parseInt(cocktail_id));
+                        intent.putExtra("idCocktail", idsCocktails.get(position) );
                         startActivity(intent);
                     }
                 });
@@ -103,6 +104,7 @@ public class ByNameSearch extends AppCompatActivity {
                 Log.d(TAG, "Volley JSON get" + response);
 
                 ArrayList<String> cocktailList = new ArrayList<>();
+                idsCocktails = new ArrayList<>();
 
                 try {
                     JSONArray jsonArray = response.getJSONArray("drinks");
@@ -112,6 +114,7 @@ public class ByNameSearch extends AppCompatActivity {
                             String cocktail_name = jo.getString("strDrink");
                             cocktail_id = jo.getString("idDrink");
                             cocktailList.add(cocktail_name);
+                            idsCocktails.add( Integer.parseInt(cocktail_id));
                         }
                     }
 
