@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -106,7 +107,7 @@ public class ByIngredientResult extends AppCompatActivity {
 
                 Log.d("persoLOG", "_ByIngredientResult_ : " + retList.toString() );
 
-//                mAdapter.a
+                findViewById(R.id.PB_waitingForCocktails).setVisibility(View.GONE);
             }
             @Override
             public void notifyError(String requestType, VolleyError error) {
