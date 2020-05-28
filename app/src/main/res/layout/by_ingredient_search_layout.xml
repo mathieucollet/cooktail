@@ -19,8 +19,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <EditText
-        android:id="@+id/editText"
+    <SearchView
+        android:id="@+id/ET_typeIngredient"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -29,7 +29,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/textView"></SearchView>
 
     <TextView
         android:id="@+id/textView2"
@@ -42,7 +42,7 @@
         android:text="List of ingredients"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/ET_typeIngredient" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RV_ingredientsList"

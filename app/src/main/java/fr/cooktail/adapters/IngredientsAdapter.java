@@ -19,6 +19,7 @@ import fr.cooktail.DetailsCocktail;
 import fr.cooktail.R;
 
 import java.util.Collections;
+import java.util.Comparator;
 
 public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.MyViewHolder> {
     private ArrayList<String> ingredientsList ;
@@ -87,6 +88,15 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
      * TODO: use it in the field of the Activity, each time the value changes
      * @param searchString
      */
-    public void sort_byName(String searchString) {}
+    public void sort_byName(String searchString) {
+       for( int i=0  ;  i <= this.ingredientsList.size() -1  ;  i++) {
+           String ing = this.ingredientsList.get(i);
+
+           if( ing.toLowerCase().contains(searchString.toLowerCase()) ) {
+               this.ingredientsList.remove(i) ;
+               this.ingredientsList.add(0 , ing);
+           }
+       }
+    }
 
 }
