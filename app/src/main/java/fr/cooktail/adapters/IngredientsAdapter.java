@@ -84,8 +84,6 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
 
     /**
      * sort the ArrayList putting in first the ingredients matching the research
-     * TODO: create sort_byName()
-     * TODO: use it in the field of the Activity, each time the value changes
      * @param searchString
      */
     public void sort_byName(String searchString) {

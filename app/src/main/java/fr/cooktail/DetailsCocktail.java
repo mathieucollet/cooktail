@@ -100,9 +100,6 @@ public class DetailsCocktail extends AppCompatActivity  {
         }
 
 
-    //TODO: fetch the cocktail details with a fonction from J
-        //TODO: fill up the textViewS details
-
         BTN_like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
