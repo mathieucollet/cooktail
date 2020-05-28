@@ -107,6 +107,7 @@ public class ByIngredientResult extends AppCompatActivity {
 
                 Log.d("persoLOG", "_ByIngredientResult_ : " + retList.toString() );
 
+                mAdapter.notifyDataSetChanged();
                 findViewById(R.id.PB_waitingForCocktails).setVisibility(View.GONE);
             }
             @Override
