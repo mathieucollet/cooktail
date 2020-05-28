@@ -92,6 +92,7 @@ public class DetailsCocktail extends AppCompatActivity  {
         initVolleyCallback();
         requests = new Requests(mResultCallback,this);
         requests.getDrinkById(this.theIdCocktail);
+
     }
 
 
