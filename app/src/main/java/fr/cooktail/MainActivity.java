@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -14,6 +16,7 @@ import com.android.volley.VolleyError;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -21,6 +24,7 @@ import fr.cooktail.interfaces.IResult;
 import fr.cooktail.services.Requests;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static fr.cooktail.util.Menu.cooktailOnOptionsItemSelected;
@@ -48,6 +52,19 @@ public class MainActivity extends AppCompatActivity {
         categoriesList = (ListView) findViewById(R.id.categories_list);
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1);
         categoriesList.setAdapter(adapter);
+
+        categoriesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String cat = ((TextView) view).getText().toString() ;
+                Log.d("persoLOG" , "_MainActivity_ category=: "+ cat);
+
+                Intent newIntent = new Intent(parent.getContext(), ByCategoryResult.class) ;
+                newIntent.putExtra("theCategory", cat );
+                startActivity(newIntent);
+            }
+        });
 
     }
 

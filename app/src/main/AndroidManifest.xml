@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".ByIngredientResult"
             android:parentActivityName=".ByIngredientSearch">
+        </activity><activity android:name=".ByCategoryResult"
+            android:parentActivityName=".MainActivity">
         </activity>
     </application>
 
