@@ -24,6 +24,9 @@
         <activity android:name=".About"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".ByNameSearch"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>

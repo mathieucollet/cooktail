@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jo = jsonArray.getJSONObject(i);
                         String name = jo.getString("strCategory");
-                        //Log.d("name", name);
                         categoriesList.add(name);
                     }
                 } catch (JSONException e) {
