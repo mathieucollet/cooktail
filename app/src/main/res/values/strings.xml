@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Cooktail</string>
+    <string name="categoriesTitle">Catégories</string>
+    <string name="about_thanks">Hi, thank you so much to use our app.</string>
+    <string name="about_authors">This app has been made by : </string>
+    <string name="about_how">It’s based on the open API gived by : </string>
+    <string name="linkToAPIWebsite">thecocktaildb.com</string>
 </resources>

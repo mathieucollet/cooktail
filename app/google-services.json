@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "778980630756",
+    "firebase_url": "https://cooktail-b6046.firebaseio.com",
+    "project_id": "cooktail-b6046",
+    "storage_bucket": "cooktail-b6046.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778980630756:android:ede2589b37408aa1da8cf1",
+        "android_client_info": {
+          "package_name": "fr.cooktail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778980630756-a55qp0s5oooq43fvltr8uq42hio6pf8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVudQezmu1CndY49zaD7DOwh5e7283EfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778980630756-a55qp0s5oooq43fvltr8uq42hio6pf8n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

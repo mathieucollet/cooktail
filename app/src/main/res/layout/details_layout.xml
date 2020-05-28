@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:id="@+id/TV_labelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Nom: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TV_contentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[contentName]"
+        app:layout_constraintStart_toStartOf="@+id/TV_labelName"
+        app:layout_constraintTop_toBottomOf="@+id/TV_labelName" />
+
+    <TextView
+        android:id="@+id/TV_labelCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Category: "
+        app:layout_constraintStart_toStartOf="@+id/TV_labelName"
+        app:layout_constraintTop_toBottomOf="@+id/TV_contentName" />
+
+    <TextView
+        android:id="@+id/TV_contentCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[Category]"
+        app:layout_constraintStart_toStartOf="@+id/TV_labelCategory"
+        app:layout_constraintTop_toBottomOf="@+id/TV_labelCategory" />
+
+    <TextView
+        android:id="@+id/TV_labelAlcoholic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Alcoholic ?"
+        app:layout_constraintStart_toStartOf="@+id/TV_contentCategory"
+        app:layout_constraintTop_toBottomOf="@+id/TV_contentCategory" />
+
+    <TextView
+        android:id="@+id/TV_contentAlchoholic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[Yes or No]"
+        app:layout_constraintStart_toStartOf="@+id/TV_labelAlcoholic"
+        app:layout_constraintTop_toBottomOf="@+id/TV_labelAlcoholic" />
+
+    <TextView
+        android:id="@+id/TV_labelGlassType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Glasse Type: "
+        app:layout_constraintStart_toStartOf="@+id/TV_contentAlchoholic"
+        app:layout_constraintTop_toBottomOf="@+id/TV_contentAlchoholic" />
+
+    <TextView
+        android:id="@+id/TV_contentGlassType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[Glasse Type]"
+        app:layout_constraintStart_toStartOf="@+id/TV_labelGlassType"
+        app:layout_constraintTop_toBottomOf="@+id/TV_labelGlassType" />
+
+    <TextView
+        android:id="@+id/TV_labelTages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tags: "
+        app:layout_constraintStart_toStartOf="@+id/TV_contentGlassType"
+        app:layout_constraintTop_toBottomOf="@+id/TV_contentGlassType" />
+
+    <TextView
+        android:id="@+id/TV_contentTags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[Tags]"
+        app:layout_constraintStart_toStartOf="@+id/TV_labelTages"
+        app:layout_constraintTop_toBottomOf="@+id/TV_labelTages" />
+
+    <TextView
+        android:id="@+id/TV_labelInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Instructions: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_contentTags" />
+
+    <TextView
+        android:id="@+id/TV_contentInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="[Instructions]"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_labelInstructions" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_contentInstructions">
+
+        <TextView
+            android:id="@+id/TV_ingredientsListLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Ingredients"
+            tools:listitem="@android:layout/activity_list_item" />
+
+        <TextView
+            android:id="@+id/TV_measuresListLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Measures"
+            tools:listitem="@android:layout/activity_list_item" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ListView
+            android:id="@+id/LV_ingredientsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:listitem="@android:layout/activity_list_item" />
+
+        <ListView
+            android:id="@+id/LV_measuresList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:listitem="@android:layout/activity_list_item" >
+
+        </ListView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/BTN_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        android:layout_marginEnd="40dp"
+        android:background="@color/colorPrimary"
+        android:text="Like"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
