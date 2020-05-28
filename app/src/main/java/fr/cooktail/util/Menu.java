@@ -39,6 +39,9 @@ public abstract class Menu {
                 break;
             case R.id.It_SBName:
                 newIntent = new Intent(currentPackageContext, ByNameSearch.class);
+                currentPackageContext.startActivity(newIntent);
+                ret = true;
+                break;
             case R.id.It_SBIngredient:
                 newIntent = new Intent(currentPackageContext, ByIngredientSearch.class);
                 currentPackageContext.startActivity(newIntent);

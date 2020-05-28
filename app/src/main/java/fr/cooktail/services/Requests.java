@@ -69,11 +69,11 @@ public class Requests {
                             mResultCallback.notifySuccess("GET", response);
                     }
                 }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                if (mResultCallback != null)
-                    mResultCallback.notifyError("GET", error);
-            }
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    if (mResultCallback != null)
+                        mResultCallback.notifyError("GET", error);
+                }
 
         });
 
@@ -98,22 +98,16 @@ public class Requests {
                             mResultCallback.notifySuccess("GET", response);
                     }
                 }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                if (mResultCallback != null)
-                    mResultCallback.notifyError("GET", error);
-            }
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    if (mResultCallback != null)
+                        mResultCallback.notifyError("GET", error);
+                }
 
         });
 
         queue.add(jsonObj);
 
-        return jsonObj;
-    }
-
-        });
-
-        queue.add(jsonObj);
         return jsonObj;
     }
 
