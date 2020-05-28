@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -79,6 +81,7 @@ public class CocktailsAdapter extends RecyclerView.Adapter<CocktailsAdapter.MyVi
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
         Drink currentDrink = theDrinkList.get(position);
         holder.TV_drinkName.setText(currentDrink.strDrink) ;
+        Picasso.get().load(currentDrink.strDrinkThumb).into(holder.IV_drinkThumb);
 //        holder.IV_drinkThumb.setImageURI(Uri.parse(currentDrink.strDrinkThumb));
         holder.idDrink = currentDrink.idDrink;
 

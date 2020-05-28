@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
 
+
     <TextView
         android:id="@+id/TV_labelName"
         android:layout_width="wrap_content"
@@ -92,6 +93,25 @@
         app:layout_constraintStart_toStartOf="@+id/TV_labelTages"
         app:layout_constraintTop_toBottomOf="@+id/TV_labelTages" />
 
+    <TextView
+        android:id="@+id/TV_labelInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Instructions: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_contentTags" />
+
+    <TextView
+        android:id="@+id/TV_contentInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="[Instructions]"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_labelInstructions" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
@@ -103,7 +123,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_contentTags">
+        app:layout_constraintTop_toBottomOf="@+id/TV_contentInstructions">
 
         <TextView
             android:id="@+id/TV_ingredientsListLabel"
@@ -149,7 +169,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            tools:listitem="@android:layout/activity_list_item" />
+            tools:listitem="@android:layout/activity_list_item" >
+
+        </ListView>
+
     </LinearLayout>
 
     <Button
@@ -164,5 +187,6 @@
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
