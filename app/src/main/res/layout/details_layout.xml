@@ -21,7 +21,6 @@
         android:id="@+id/TV_contentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="[contentName]"
         app:layout_constraintStart_toStartOf="@+id/TV_labelName"
         app:layout_constraintTop_toBottomOf="@+id/TV_labelName" />
 
@@ -38,26 +37,21 @@
         android:id="@+id/TV_contentCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="[Category]"
         app:layout_constraintStart_toStartOf="@+id/TV_labelCategory"
         app:layout_constraintTop_toBottomOf="@+id/TV_labelCategory" />
 
-    <TextView
-        android:id="@+id/TV_labelAlcoholic"
+    <Button
+        android:id="@+id/Bt_alcoholic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Alcoholic ?"
-        app:layout_constraintStart_toStartOf="@+id/TV_contentCategory"
+        android:clickable="false"
+        android:text="Alcoholic?"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV_contentCategory" />
-
-    <TextView
-        android:id="@+id/TV_contentAlchoholic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="[Yes or No]"
-        app:layout_constraintStart_toStartOf="@+id/TV_labelAlcoholic"
-        app:layout_constraintTop_toBottomOf="@+id/TV_labelAlcoholic" />
 
     <TextView
         android:id="@+id/TV_labelGlassType"
@@ -65,14 +59,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Glasse Type: "
-        app:layout_constraintStart_toStartOf="@+id/TV_contentAlchoholic"
-        app:layout_constraintTop_toBottomOf="@+id/TV_contentAlchoholic" />
+        app:layout_constraintStart_toStartOf="@+id/Bt_alcoholic"
+        app:layout_constraintTop_toBottomOf="@+id/Bt_alcoholic" />
 
     <TextView
         android:id="@+id/TV_contentGlassType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="[Glasse Type]"
         app:layout_constraintStart_toStartOf="@+id/TV_labelGlassType"
         app:layout_constraintTop_toBottomOf="@+id/TV_labelGlassType" />
 
@@ -89,7 +82,6 @@
         android:id="@+id/TV_contentTags"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="[Tags]"
         app:layout_constraintStart_toStartOf="@+id/TV_labelTages"
         app:layout_constraintTop_toBottomOf="@+id/TV_labelTages" />
 
@@ -108,7 +100,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="[Instructions]"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV_labelInstructions" />
 

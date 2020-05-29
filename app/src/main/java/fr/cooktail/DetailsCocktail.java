@@ -44,7 +44,7 @@ public class DetailsCocktail extends AppCompatActivity  {
 
     TextView TV_contentName ;
     TextView TV_contentCategory ;
-    TextView TV_contentAlchoholic ;
+    Button Bt_alcoholic ;
     TextView TV_contentGlassType ;
     TextView TV_contentTags ;
     Button BTN_like;
@@ -63,7 +63,7 @@ public class DetailsCocktail extends AppCompatActivity  {
 
         this.TV_contentName = findViewById(R.id.TV_contentName);
         this.TV_contentCategory = findViewById(R.id.TV_contentCategory);
-        this.TV_contentAlchoholic = findViewById(R.id.TV_contentAlchoholic);
+        this.Bt_alcoholic = findViewById(R.id.Bt_alcoholic);
         this.TV_contentGlassType = findViewById(R.id.TV_contentGlassType);
         this.TV_contentTags = findViewById(R.id.TV_contentTags);
         this.BTN_like = findViewById(R.id.BTN_like);
@@ -154,9 +154,13 @@ public class DetailsCocktail extends AppCompatActivity  {
                     }
                     TV_contentName.setText(String.valueOf(theDrink.strDrink));
                     TV_contentCategory.setText(theDrink.strCategory);
-                    TV_contentAlchoholic.setText(theDrink.strAlcoholic);
+                    Bt_alcoholic.setText(theDrink.strAlcoholic);
+                    Log.d("persoLog", "DetailsCocktail : "+ theDrink.strAlcoholic.toLowerCase());
+                    if (theDrink.strAlcoholic.toLowerCase().equals("alcoholic"))
+                            Bt_alcoholic.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    else    Bt_alcoholic.setBackgroundColor(getResources().getColor(R.color.colorAccent));
                     TV_contentGlassType.setText(theDrink.strGlass);
-                    TV_contentTags.setText(theDrink.strTags);
+                    if (theDrink.strTags != "null")  TV_contentTags.setText(theDrink.strTags);
                     TV_contentInstructions.setText(theDrink.strInstructions);
 
 
