@@ -153,14 +153,14 @@ public class DetailsCocktail extends AppCompatActivity  {
                         theDrink.setMeasures(measures);
                     }
                     TV_contentName.setText(String.valueOf(theDrink.strDrink));
-                    TV_contentCategory.setText(theDrink.strCategory);
+                    TV_contentCategory.setText(" "+ theDrink.strCategory);
                     Bt_alcoholic.setText(theDrink.strAlcoholic);
                     Log.d("persoLog", "DetailsCocktail : "+ theDrink.strAlcoholic.toLowerCase());
                     if (theDrink.strAlcoholic.toLowerCase().equals("alcoholic"))
                             Bt_alcoholic.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                     else    Bt_alcoholic.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-                    TV_contentGlassType.setText(theDrink.strGlass);
-                    if (theDrink.strTags != "null")  TV_contentTags.setText(theDrink.strTags);
+                    TV_contentGlassType.setText(" "+ theDrink.strGlass);
+                    if (theDrink.strTags != "null")  TV_contentTags.setText(" "+ theDrink.strTags);
                     TV_contentInstructions.setText(theDrink.strInstructions);
 
 
