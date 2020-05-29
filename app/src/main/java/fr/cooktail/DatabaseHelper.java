@@ -55,7 +55,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
             if (result == -1) {
                 Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(context, "Liked successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Liked", Toast.LENGTH_SHORT).show();
             }
         }
     }
