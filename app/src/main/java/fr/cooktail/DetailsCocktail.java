@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Button;
@@ -20,6 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.VolleyError;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,6 +51,7 @@ public class DetailsCocktail extends AppCompatActivity  {
     TextView TV_contentTags ;
     Button BTN_like;
     TextView TV_contentInstructions ;
+    ImageView IV_theDrinkImage;
 
     ListView LV_ingredientsList ;
     ArrayAdapter<String> theArrayAdapterIngredients;
@@ -68,6 +71,7 @@ public class DetailsCocktail extends AppCompatActivity  {
         this.TV_contentTags = findViewById(R.id.TV_contentTags);
         this.BTN_like = findViewById(R.id.BTN_like);
         this.TV_contentInstructions = findViewById(R.id.TV_contentInstructions);
+        this.IV_theDrinkImage = findViewById(R.id.IV_theDrinkImage);
 
 
         this.theDrink = new DrinkDetailed();
@@ -162,6 +166,8 @@ public class DetailsCocktail extends AppCompatActivity  {
                     TV_contentGlassType.setText(" "+ theDrink.strGlass);
                     if (theDrink.strTags != "null")  TV_contentTags.setText(" "+ theDrink.strTags);
                     TV_contentInstructions.setText(theDrink.strInstructions);
+
+                    Picasso.get().load(theDrink.strDrinkThumb).into(IV_theDrinkImage);
 
 
                     synchronized(theArrayAdapterIngredients){

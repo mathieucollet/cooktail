@@ -141,18 +141,39 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/Bt_alcoholic"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:clickable="false"
-        android:text="Alcoholic?"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout5">
+
+        <ImageView
+            android:id="@+id/IV_theDrinkImage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:foregroundGravity="center"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/Bt_alcoholic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="Alcoholic?"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/TV_labelInstructions"
@@ -166,7 +187,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Bt_alcoholic" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 
     <TextView
         android:id="@+id/TV_contentInstructions"
@@ -217,6 +238,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -234,7 +256,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            tools:listitem="@android:layout/activity_list_item" />
+            tools:listitem="@android:layout/activity_list_item">
+
+        </ListView>
 
         <ListView
             android:id="@+id/LV_measuresList"
