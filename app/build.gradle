@@ -8,8 +8,8 @@ android {
         applicationId "fr.cooktail"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0 - working fine"
+        versionCode 2
+        versionName "1.1 - Nice Details"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
